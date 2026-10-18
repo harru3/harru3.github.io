@@ -13,6 +13,10 @@
   --text-size: 20px;
   --nav-size: 26px;
 
+  --bar-color: #000000;       /* top bar background */
+  --bar-text: #ffffff;        /* top bar text */
+  --bar-fade: 0.3s;           /* how long the hover fade takes */
+
   --column-width: 662px;      /* width of the centered text column */
 }
 
@@ -31,38 +35,39 @@ body {
   line-height: 1.575;
 }
 
-/* One centered column: links on top, then name, tagline and lists */
-.page {
-  max-width: calc(var(--column-width) + 32px);
-  margin: 0 auto;
-  padding: 8px 16px 48px;
-}
-
-/* Links row across the top */
+/* Top bar: solid black, split into equal sections, one per link */
 .nav {
-  position: relative;
-  height: calc(var(--nav-size) * 1.4);
-  margin-bottom: 22px;
+  display: flex;
+  background: var(--bar-color);
 }
 
 .link {
-  position: absolute;
-  top: 0;
-  color: var(--heading-color);
+  flex: 1;                  /* every section gets the same width */
+  padding: 12px 8px;
+  text-align: center;       /* text sits in the middle of its section */
+  color: var(--bar-text);
   font-size: var(--nav-size);
   font-weight: 700;
   line-height: 1.4;
   text-decoration: underline;
   text-underline-offset: 4px;
   text-decoration-thickness: 2px;
+  transition: background-color var(--bar-fade) ease, color var(--bar-fade) ease;
 }
 
-.link-projects  { left: 0; }
-.link-notes     { left: 47.7%; transform: translateX(-50%); }  /* middle */
-.link-favorites { left: 77.7%; }
+/* Hover (or keyboard focus): section fades to white, text fades to black */
+.link:hover,
+.link:focus-visible {
+  background-color: var(--bar-text);
+  color: var(--bar-color);
+  outline: none;
+}
 
-.link:hover {
-  opacity: 0.6;
+/* One centered column: name, tagline and lists */
+.page {
+  max-width: calc(var(--column-width) + 32px);
+  margin: 0 auto;
+  padding: 24px 16px 48px;
 }
 
 h1 {
@@ -117,15 +122,8 @@ ul ul {
     --nav-size: 21px;
   }
 
-  .nav {
-    display: flex;
-    justify-content: space-between;
-    height: auto;
-  }
-
   .link {
-    position: static;
-    transform: none;
+    padding: 10px 4px;
   }
 
   ul {
@@ -147,7 +145,8 @@ ul ul {
 
 /* Hide the page until script.js has lined up the animation,
    so nothing flashes on screen first */
-.js:not(.ready) .page {
+.js:not(.ready) .page,
+.js:not(.ready) .nav {
   visibility: hidden;
 }
 

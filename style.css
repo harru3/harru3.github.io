@@ -11,10 +11,10 @@
   --name-size: 55px;
   --tagline-size: 22px;
   --text-size: 20px;
-  --nav-size: 26px;
+  --nav-size: 21px;
 
-  --bar-color: #000000;       /* top bar background */
-  --bar-text: #ffffff;        /* top bar text */
+  --bar-color: #ffffff;       /* top bar background */
+  --bar-text: #000000;        /* top bar text */
   --bar-fade: 0.3s;           /* how long the hover fade takes */
 
   --column-width: 662px;      /* width of the centered text column */
@@ -49,9 +49,7 @@ body {
   font-size: var(--nav-size);
   font-weight: 700;
   line-height: 1.4;
-  text-decoration: underline;
-  text-underline-offset: 4px;
-  text-decoration-thickness: 2px;
+  text-decoration: none;
   transition: background-color var(--bar-fade) ease, color var(--bar-fade) ease;
 }
 
@@ -119,7 +117,7 @@ ul ul {
     --name-size: 42px;
     --tagline-size: 18px;
     --text-size: 17px;
-    --nav-size: 21px;
+    --nav-size: 17px;
   }
 
   .link {

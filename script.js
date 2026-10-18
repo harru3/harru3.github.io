@@ -1,11 +1,11 @@
 /* =========================================================
    ANIMATION SETTINGS — tweak these numbers
    ========================================================= */
-const STAGGER_MS = 10;     // delay between each line appearing
-const DURATION_MS = 700;   // how long each line takes to fade/slide in
-const DISTANCE_PX = 16;    // how far each line slides up from
+const STAGGER_MS = 38;     // delay between each line appearing
+const DURATION_MS = 1000;  // how long each line takes to fade/slide in
+const DISTANCE_PX = 50;    // how far each line slides up from
 
-const SMOOTH_SCROLL = 1.2; // smooth scroll duration (seconds); 0 = off
+const SMOOTH_SCROLL = 0.5; // smooth scroll duration (seconds); 0 = off
 
 /* ========================================================= */
 

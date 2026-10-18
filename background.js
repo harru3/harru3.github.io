@@ -1,9 +1,9 @@
 /* =========================================================
    HALFTONE BACKGROUND SETTINGS — tweak these numbers
    ========================================================= */
-const DOT_COLOR = '#3d3d3d';
+const DOT_COLOR = '#757575';
 const DOT_SPACING = 12;     // px between dot centres (smaller = denser)
-const DOT_SCALE = 0.75;      // shrinks dots AND spacing together (keeps the same look, just finer)
+const DOT_SCALE = 0.7;      // shrinks dots AND spacing together (keeps the same look, just finer)
 const MAX_DOT_SIZE = 0.9;   // biggest dot, as a fraction of spacing (1 = dots touch)
 const MIN_DOT_SIZE = 0.2;  // smallest dot between bands, as a fraction of the biggest (0 = gaps go blank, 1 = no bands)
 const GRID_ANGLE = 45;      // degrees the dot grid is rotated

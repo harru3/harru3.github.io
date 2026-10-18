@@ -1,15 +1,15 @@
 /* =========================================================
    HALFTONE BACKGROUND SETTINGS — tweak these numbers
    ========================================================= */
-const DOT_COLOR = '#969696';
-const DOT_SPACING = 9;      // px between dot centres (smaller = denser)
-const MAX_DOT_SIZE = 1.0;   // biggest dot, as a fraction of spacing (1 = dots touch)
+const DOT_COLOR = '#cfcfcf';
+const DOT_SPACING = 14;     // px between dot centres (smaller = denser)
+const MAX_DOT_SIZE = 0.75;  // biggest dot, as a fraction of spacing (1 = dots touch)
 const GRID_ANGLE = 45;      // degrees the dot grid is rotated
 const BAND_ANGLE = 60;      // degrees the dark bands lean (0 = flat, 90 = upright)
 const BAND_WIDTH = 260;     // px from one dark band to the next
-const SPEED = 0.25;         // how fast it undulates (0 = frozen)
-const START_AT = 0.45;      // where the dots begin, as a fraction of screen width
-const EDGE_SOFTNESS = 0.25; // how gradually the dots fade in from the left
+const SPEED = 0.4;          // how fast it undulates (0 = frozen)
+const START_AT = 0.65;      // where the dots begin, as a fraction of screen width
+const EDGE_SOFTNESS = 0.4;  // how gradually the dots fade in from the left
 
 /* ========================================================= */
 

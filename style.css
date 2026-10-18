@@ -36,7 +36,7 @@ body {
   grid-template-areas:
     "intro    projects"
     "building notes"
-    "done     interests";
+    "done     favorites";
   column-gap: 48px;
   max-width: 1200px;
   margin: 0 auto;
@@ -48,7 +48,7 @@ body {
 .done      { grid-area: done; }
 .link-projects  { grid-area: projects; }
 .link-notes     { grid-area: notes; }
-.link-interests { grid-area: interests; }
+.link-favorites { grid-area: favorites; }
 
 h1 {
   margin: 0;
@@ -95,7 +95,7 @@ ul ul {
 
 .link-projects { margin-top: 8px; }   /* level with the name */
 .link-notes    { margin-top: 48px; }  /* level with the first bullet */
-.link-interests { margin-top: 20px; } /* level with "Stuff I've done" */
+.link-favorites { margin-top: -6px; } /* just above "Stuff I've done" */
 
 .link:hover {
   opacity: 0.6;
@@ -112,7 +112,7 @@ ul ul {
   .page {
     grid-template-columns: auto auto 1fr;
     grid-template-areas:
-      "projects notes    interests"
+      "projects notes    favorites"
       "intro    intro    intro"
       "building building building"
       "done     done     done";

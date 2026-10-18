@@ -4,21 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>harryYu</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,700;1,300;1,700&display=swap">
-  <link rel="stylesheet" href="style.css?v=8">
+  <link rel="stylesheet" href="style.css?v=9">
   <script>
     // hide the page until the intro animation is ready (shows anyway after 2s if something breaks)
     document.documentElement.classList.add('js');
     setTimeout(() => document.documentElement.classList.add('ready'), 2000);
   </script>
   <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js" defer></script>
-  <script src="background.js?v=5" defer></script>
+  <script src="background.js?v=6" defer></script>
   <script src="script.js?v=2" defer></script>
 </head>
 <body>
   <div class="page">
+
+    <!-- LINKS TO SUBPAGES (row across the top) -->
+    <nav class="nav">
+      <a class="link link-projects" href="projects.html">Projects</a>
+      <a class="link link-notes" href="notes.html">Notes</a>
+      <a class="link link-favorites" href="favorites.html">Favorites</a>
+    </nav>
 
     <!-- EDIT YOUR NAME + TAGLINE HERE -->
     <header class="intro">
@@ -33,7 +37,7 @@
         <li>Main throttle valve and remote fueling systems for (hopefully) the world’s first hybrid rocket lander (paraffin/N2O)</li>
         <li>Thrust vectoring gimbal for a 2500N liquid lander (Jet-A/LOX)</li>
         <li>Rabbit0, a 6 dof robotic arm with 1kg payload, 0.1mm repeatability, all 3dp-able, for &lt;$400</li>
-        <li>Drone sensor jamming project</li>
+        <li>Drone sensor jammers</li>
       </ul>
     </section>
 
@@ -54,18 +58,17 @@
         </li>
         <li>Intern @ GMU RobotiXX Lab
           <ul>
-            <li>trained ML models to perform vertically challenging off-road navigation</li>
-            <li>also was a data labeling slave for human-robot interaction data for a different project</li>
+            <li>trained ML models to perform vertically challenging <span class="nowrap">off-road</span> navigation</li>
+          </ul>
+        </li>
+        <li>Founded the Small Things Matter Virginia branch
+          <ul>
+            <li>Served 500+ meals through weekly deliveries to homeless shelters and churches</li>
           </ul>
         </li>
         <li>8x State Medalist for Virginia Science Olympiad Div C</li>
       </ul>
     </section>
-
-    <!-- LINKS TO SUBPAGES (each one lines up with a section on the left) -->
-    <a class="link link-projects" href="projects.html">Projects</a>
-    <a class="link link-notes" href="notes.html">Notes</a>
-    <a class="link link-favorites" href="favorites.html">Favorites</a>
 
   </div>
 </body>

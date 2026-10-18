@@ -2,38 +2,21 @@
    STYLE SETTINGS — change these to restyle the whole site
    ========================================================= */
 :root {
-  --font: "Helvetica Neue", "Inter", Helvetica, Arial, sans-serif;            /* name, headings, links */
-  --light-font: "Helvetica Neue Light Only", "Inter", Helvetica, Arial, sans-serif; /* body text */
-  --body-weight: 300;         /* 300 = light, 400 = regular */
+  --font: "Helvetica Neue", Helvetica, Arial, sans-serif;
 
   --background: #ffffff;
   --heading-color: #000000;   /* name + nav links */
   --text-color: #595959;      /* body text (grey) */
 
-  --name-size: 62px;
-  --tagline-size: 26px;
-  --text-size: 22px;
-  --nav-size: 37px;
+  --name-size: 55px;
+  --tagline-size: 22px;
+  --text-size: 20px;
+  --nav-size: 26px;
+
+  --column-width: 662px;      /* width of the centered text column */
 }
 
 /* ========================================================= */
-
-/* Use Helvetica Neue Light only if that exact weight is installed
-   (some PCs have Helvetica Neue without Light, which would show up
-   as regular). Otherwise the body falls back to Inter Light. */
-@font-face {
-  font-family: "Helvetica Neue Light Only";
-  src: local("HelveticaNeue-Light"), local("Helvetica Neue Light");
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Helvetica Neue Light Only";
-  src: local("HelveticaNeue-LightItalic"), local("Helvetica Neue Light Italic");
-  font-weight: 300;
-  font-style: italic;
-}
 
 * {
   box-sizing: border-box;
@@ -43,36 +26,43 @@ body {
   margin: 0;
   background: var(--background);
   color: var(--text-color);
-  font-family: var(--light-font);
-  font-size: var(--text-size);
-  font-weight: var(--body-weight);
-  line-height: 1.4;
-}
-
-/* Layout grid: content on the left, each link on the right
-   sits on the same row as the section it lines up with */
-.page {
-  display: grid;
-  grid-template-columns: minmax(0, 816px) 1fr;
-  grid-template-areas:
-    "intro    projects"
-    "building notes"
-    "done     favorites";
-  column-gap: 48px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 24px 40px 48px;
-}
-
-.intro     { grid-area: intro; }
-.building  { grid-area: building; }
-.done      { grid-area: done; }
-.link-projects  { grid-area: projects; }
-.link-notes     { grid-area: notes; }
-.link-favorites { grid-area: favorites; }
-
-h1, h2, .link {
   font-family: var(--font);
+  font-size: var(--text-size);
+  line-height: 1.575;
+}
+
+/* One centered column: links on top, then name, tagline and lists */
+.page {
+  max-width: calc(var(--column-width) + 32px);
+  margin: 0 auto;
+  padding: 8px 16px 48px;
+}
+
+/* Links row across the top */
+.nav {
+  position: relative;
+  height: calc(var(--nav-size) * 1.4);
+  margin-bottom: 22px;
+}
+
+.link {
+  position: absolute;
+  top: 0;
+  color: var(--heading-color);
+  font-size: var(--nav-size);
+  font-weight: 700;
+  line-height: 1.4;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 2px;
+}
+
+.link-projects  { left: 0; }
+.link-notes     { left: 47.7%; transform: translateX(-50%); }  /* middle */
+.link-favorites { left: 77.7%; }
+
+.link:hover {
+  opacity: 0.6;
 }
 
 h1 {
@@ -80,75 +70,62 @@ h1 {
   color: var(--heading-color);
   font-size: var(--name-size);
   font-weight: 700;
+  line-height: 1.2;
   letter-spacing: -0.5px;
 }
 
 .tagline {
-  margin: 4px 0 -3px;
+  margin: 7px 0 0;
   font-size: var(--tagline-size);
 }
 
 h2 {
-  margin: 24px 0 4px;
+  margin: 21px 0 0;
   font-size: var(--text-size);
   font-weight: 700;
   font-style: italic;
 }
 
+.building h2 {
+  margin-bottom: 5px;
+}
+
+.done h2 {
+  margin-top: 62px;   /* two blank lines above "Stuff I've done" */
+}
+
 ul {
   margin: 0;
-  padding-left: 60px;
+  padding-left: 66px;
 }
 
 ul ul {
-  padding-left: 40px;
+  padding-left: 66px;
   list-style-type: circle;
-  margin: 4px 0;
 }
 
-/* Right-hand links */
-.link {
-  justify-self: end;
-  align-self: start;
-  color: var(--heading-color);
-  font-size: var(--nav-size);
-  font-weight: 700;
-  text-decoration: underline;
-  text-underline-offset: 4px;
-  text-decoration-thickness: 2px;
+.nowrap {
+  white-space: nowrap;   /* keeps words like "off-road" from splitting across lines */
 }
 
-.link-projects { margin-top: 5px; }   /* level with the name */
-.link-notes    { margin-top: 66px; }  /* level with the first bullet */
-.link-favorites { margin-top: 35px; } /* just above "Stuff I've done" */
-
-.link:hover {
-  opacity: 0.6;
-}
-
-/* Phones: one column, links in a row across the top */
-@media (max-width: 800px) {
+/* Phones: smaller text, links spread evenly */
+@media (max-width: 700px) {
   :root {
-    --name-size: 44px;
-    --tagline-size: 21px;
-    --text-size: 18px;
-    --nav-size: 22px;
+    --name-size: 42px;
+    --tagline-size: 18px;
+    --text-size: 17px;
+    --nav-size: 21px;
   }
 
-  .page {
-    grid-template-columns: auto auto 1fr;
-    grid-template-areas:
-      "projects notes    favorites"
-      "intro    intro    intro"
-      "building building building"
-      "done     done     done";
-    column-gap: 24px;
-    padding: 16px;
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    height: auto;
   }
 
   .link {
-    justify-self: start;
-    margin: 0 0 16px;
+    position: static;
+    transform: none;
   }
 
   ul {
@@ -157,6 +134,10 @@ ul ul {
 
   ul ul {
     padding-left: 24px;
+  }
+
+  .done h2 {
+    margin-top: 32px;
   }
 }
 

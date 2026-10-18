@@ -153,8 +153,15 @@ li.fade-up {
   display: list-item;
 }
 
+/* Bullets with sub-bullets: move the dot onto the animated text
+   so it slides in with it */
+li.has-sublist {
+  list-style: none;
+}
+
 li.has-sublist > span.fade-up {
-  display: block;
+  display: list-item;
+  list-style: disc;
 }
 
 h1.fade-up,

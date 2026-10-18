@@ -8,9 +8,10 @@
   --heading-color: #000000;   /* name + nav links */
   --text-color: #595959;      /* body text (grey) */
 
-  --name-size: 64px;
+  --name-size: 62px;
+  --tagline-size: 26px;
   --text-size: 22px;
-  --nav-size: 32px;
+  --nav-size: 37px;
 }
 
 /* ========================================================= */
@@ -25,7 +26,7 @@ body {
   color: var(--text-color);
   font-family: var(--font);
   font-size: var(--text-size);
-  line-height: 1.45;
+  line-height: 1.4;
 }
 
 /* Layout grid: content on the left, each link on the right
@@ -59,7 +60,8 @@ h1 {
 }
 
 .tagline {
-  margin: 4px 0 8px;
+  margin: 4px 0 -3px;
+  font-size: var(--tagline-size);
   font-weight: 300;
 }
 
@@ -93,9 +95,9 @@ ul ul {
   text-decoration-thickness: 2px;
 }
 
-.link-projects { margin-top: 8px; }   /* level with the name */
-.link-notes    { margin-top: 48px; }  /* level with the first bullet */
-.link-favorites { margin-top: -6px; } /* just above "Stuff I've done" */
+.link-projects { margin-top: 5px; }   /* level with the name */
+.link-notes    { margin-top: 66px; }  /* level with the first bullet */
+.link-favorites { margin-top: 35px; } /* just above "Stuff I've done" */
 
 .link:hover {
   opacity: 0.6;
@@ -105,6 +107,7 @@ ul ul {
 @media (max-width: 800px) {
   :root {
     --name-size: 44px;
+    --tagline-size: 21px;
     --text-size: 18px;
     --nav-size: 22px;
   }

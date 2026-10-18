@@ -1,7 +1,7 @@
 /* =========================================================
    HALFTONE BACKGROUND SETTINGS — tweak these numbers
    ========================================================= */
-const DOT_COLOR = '#bababa';
+const DOT_COLOR = '#3d3d3d';
 const DOT_SPACING = 12;     // px between dot centres (smaller = denser)
 const DOT_SCALE = 0.75;      // shrinks dots AND spacing together (keeps the same look, just finer)
 const MAX_DOT_SIZE = 0.9;   // biggest dot, as a fraction of spacing (1 = dots touch)

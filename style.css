@@ -2,7 +2,9 @@
    STYLE SETTINGS — change these to restyle the whole site
    ========================================================= */
 :root {
-  --font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font: "Helvetica Neue", "Inter", Helvetica, Arial, sans-serif;            /* name, headings, links */
+  --light-font: "Helvetica Neue Light Only", "Inter", Helvetica, Arial, sans-serif; /* body text */
+  --body-weight: 300;         /* 300 = light, 400 = regular */
 
   --background: #ffffff;
   --heading-color: #000000;   /* name + nav links */
@@ -16,6 +18,23 @@
 
 /* ========================================================= */
 
+/* Use Helvetica Neue Light only if that exact weight is installed
+   (some PCs have Helvetica Neue without Light, which would show up
+   as regular). Otherwise the body falls back to Inter Light. */
+@font-face {
+  font-family: "Helvetica Neue Light Only";
+  src: local("HelveticaNeue-Light"), local("Helvetica Neue Light");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Helvetica Neue Light Only";
+  src: local("HelveticaNeue-LightItalic"), local("Helvetica Neue Light Italic");
+  font-weight: 300;
+  font-style: italic;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -24,8 +43,9 @@ body {
   margin: 0;
   background: var(--background);
   color: var(--text-color);
-  font-family: var(--font);
+  font-family: var(--light-font);
   font-size: var(--text-size);
+  font-weight: var(--body-weight);
   line-height: 1.4;
 }
 
@@ -33,7 +53,7 @@ body {
    sits on the same row as the section it lines up with */
 .page {
   display: grid;
-  grid-template-columns: minmax(0, 780px) 1fr;
+  grid-template-columns: minmax(0, 816px) 1fr;
   grid-template-areas:
     "intro    projects"
     "building notes"
@@ -51,6 +71,10 @@ body {
 .link-notes     { grid-area: notes; }
 .link-favorites { grid-area: favorites; }
 
+h1, h2, .link {
+  font-family: var(--font);
+}
+
 h1 {
   margin: 0;
   color: var(--heading-color);
@@ -62,7 +86,6 @@ h1 {
 .tagline {
   margin: 4px 0 -3px;
   font-size: var(--tagline-size);
-  font-weight: 300;
 }
 
 h2 {

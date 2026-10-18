@@ -4,7 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>harryYu</title>
-  <link rel="stylesheet" href="style.css?v=3">
+  <link rel="stylesheet" href="style.css?v=4">
+  <script>
+    // hide the page until the intro animation is ready (shows anyway after 2s if something breaks)
+    document.documentElement.classList.add('js');
+    setTimeout(() => document.documentElement.classList.add('ready'), 2000);
+  </script>
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js" defer></script>
+  <script src="script.js?v=1" defer></script>
 </head>
 <body>
   <div class="page">

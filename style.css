@@ -133,3 +133,60 @@ ul ul {
     padding-left: 24px;
   }
 }
+
+/* =========================================================
+   INTRO ANIMATION (timing is set in script.js)
+   ========================================================= */
+
+/* Hide the page until script.js has lined up the animation,
+   so nothing flashes on screen first */
+.js:not(.ready) .page {
+  visibility: hidden;
+}
+
+.fade-up {
+  display: inline-block;   /* lets the text slide */
+  animation: fade-up var(--fade-duration, 700ms) cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+li.fade-up {
+  display: list-item;
+}
+
+li.has-sublist > span.fade-up {
+  display: block;
+}
+
+h1.fade-up,
+h2.fade-up,
+p.fade-up {
+  display: block;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(var(--fade-distance, 16px));
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* People who've turned off animations in their system settings */
+@media (prefers-reduced-motion: reduce) {
+  .fade-up {
+    animation: none;
+  }
+}
+
+/* Smooth scroll library (Lenis) */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}

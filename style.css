@@ -188,6 +188,24 @@ p.fade-up {
   }
 }
 
+/* =========================================================
+   HALFTONE BACKGROUND (settings are in background.js)
+   ========================================================= */
+.halftone {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;            /* sits behind the text */
+  pointer-events: none;   /* clicks go straight through */
+  opacity: 0;
+  transition: opacity 1.5s ease;
+}
+
+.halftone.shown {
+  opacity: 1;
+}
+
 /* Smooth scroll library (Lenis) */
 html.lenis,
 html.lenis body {

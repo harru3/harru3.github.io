@@ -28,19 +28,27 @@ body {
   line-height: 1.45;
 }
 
-/* Two columns: main content on the left, links on the right */
+/* Layout grid: content on the left, each link on the right
+   sits on the same row as the section it lines up with */
 .page {
-  display: flex;
-  justify-content: space-between;
-  gap: 48px;
+  display: grid;
+  grid-template-columns: minmax(0, 780px) 1fr;
+  grid-template-areas:
+    "intro    projects"
+    "building notes"
+    "done     interests";
+  column-gap: 48px;
   max-width: 1200px;
   margin: 0 auto;
   padding: 24px 40px 48px;
 }
 
-.main {
-  max-width: 780px;
-}
+.intro     { grid-area: intro; }
+.building  { grid-area: building; }
+.done      { grid-area: done; }
+.link-projects  { grid-area: projects; }
+.link-notes     { grid-area: notes; }
+.link-interests { grid-area: interests; }
 
 h1 {
   margin: 0;
@@ -51,7 +59,7 @@ h1 {
 }
 
 .tagline {
-  margin: 4px 0 32px;
+  margin: 4px 0 8px;
   font-weight: 300;
 }
 
@@ -70,21 +78,13 @@ ul {
 ul ul {
   padding-left: 40px;
   list-style-type: circle;
-  font-size: 0.8em;
-  font-style: italic;
-  margin: 8px 0;
+  margin: 4px 0;
 }
 
 /* Right-hand links */
-.nav {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 120px;
-  padding-top: 40px;
-}
-
-.nav a {
+.link {
+  justify-self: end;
+  align-self: start;
   color: var(--heading-color);
   font-size: var(--nav-size);
   font-weight: 700;
@@ -93,11 +93,15 @@ ul ul {
   text-decoration-thickness: 2px;
 }
 
-.nav a:hover {
+.link-projects { margin-top: 8px; }   /* level with the name */
+.link-notes    { margin-top: 48px; }  /* level with the first bullet */
+.link-interests { margin-top: 20px; } /* level with "Stuff I've done" */
+
+.link:hover {
   opacity: 0.6;
 }
 
-/* Phones: stack the links on top as a row */
+/* Phones: one column, links in a row across the top */
 @media (max-width: 800px) {
   :root {
     --name-size: 44px;
@@ -106,19 +110,26 @@ ul ul {
   }
 
   .page {
-    flex-direction: column-reverse;
-    gap: 16px;
+    grid-template-columns: auto auto 1fr;
+    grid-template-areas:
+      "projects notes    interests"
+      "intro    intro    intro"
+      "building building building"
+      "done     done     done";
+    column-gap: 24px;
     padding: 16px;
   }
 
-  .nav {
-    flex-direction: row;
-    justify-content: flex-start;
-    gap: 24px;
-    padding-top: 0;
+  .link {
+    justify-self: start;
+    margin: 0 0 16px;
   }
 
   ul {
     padding-left: 28px;
+  }
+
+  ul ul {
+    padding-left: 24px;
   }
 }

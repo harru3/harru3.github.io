@@ -1,0 +1,124 @@
+/* =========================================================
+   STYLE SETTINGS — change these to restyle the whole site
+   ========================================================= */
+:root {
+  --font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  --background: #ffffff;
+  --heading-color: #000000;   /* name + nav links */
+  --text-color: #595959;      /* body text (grey) */
+
+  --name-size: 64px;
+  --text-size: 22px;
+  --nav-size: 32px;
+}
+
+/* ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--text-color);
+  font-family: var(--font);
+  font-size: var(--text-size);
+  line-height: 1.45;
+}
+
+/* Two columns: main content on the left, links on the right */
+.page {
+  display: flex;
+  justify-content: space-between;
+  gap: 48px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 40px 48px;
+}
+
+.main {
+  max-width: 780px;
+}
+
+h1 {
+  margin: 0;
+  color: var(--heading-color);
+  font-size: var(--name-size);
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.tagline {
+  margin: 4px 0 32px;
+  font-weight: 300;
+}
+
+h2 {
+  margin: 24px 0 4px;
+  font-size: var(--text-size);
+  font-weight: 700;
+  font-style: italic;
+}
+
+ul {
+  margin: 0;
+  padding-left: 60px;
+}
+
+ul ul {
+  padding-left: 40px;
+  list-style-type: circle;
+  font-size: 0.8em;
+  font-style: italic;
+  margin: 8px 0;
+}
+
+/* Right-hand links */
+.nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 120px;
+  padding-top: 40px;
+}
+
+.nav a {
+  color: var(--heading-color);
+  font-size: var(--nav-size);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 2px;
+}
+
+.nav a:hover {
+  opacity: 0.6;
+}
+
+/* Phones: stack the links on top as a row */
+@media (max-width: 800px) {
+  :root {
+    --name-size: 44px;
+    --text-size: 18px;
+    --nav-size: 22px;
+  }
+
+  .page {
+    flex-direction: column-reverse;
+    gap: 16px;
+    padding: 16px;
+  }
+
+  .nav {
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 24px;
+    padding-top: 0;
+  }
+
+  ul {
+    padding-left: 28px;
+  }
+}

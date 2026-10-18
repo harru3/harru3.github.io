@@ -1,15 +1,16 @@
 /* =========================================================
    HALFTONE BACKGROUND SETTINGS — tweak these numbers
    ========================================================= */
-const DOT_COLOR = '#cfcfcf';
-const DOT_SPACING = 14;     // px between dot centres (smaller = denser)
-const MAX_DOT_SIZE = 0.75;  // biggest dot, as a fraction of spacing (1 = dots touch)
+const DOT_COLOR = '#bababa';
+const DOT_SPACING = 12;     // px between dot centres (smaller = denser)
+const MAX_DOT_SIZE = 0.9;   // biggest dot, as a fraction of spacing (1 = dots touch)
+const MIN_DOT_SIZE = 0.35;  // smallest dot between bands, as a fraction of the biggest (0 = gaps go blank, 1 = no bands)
 const GRID_ANGLE = 45;      // degrees the dot grid is rotated
 const BAND_ANGLE = 60;      // degrees the dark bands lean (0 = flat, 90 = upright)
 const BAND_WIDTH = 260;     // px from one dark band to the next
-const SPEED = 0.4;          // how fast it undulates (0 = frozen)
-const START_AT = 0.65;      // where the dots begin, as a fraction of screen width
-const EDGE_SOFTNESS = 0.4;  // how gradually the dots fade in from the left
+const SPEED = 0.55;         // how fast it undulates (0 = frozen)
+const START_AT = 0.55;      // where the dots begin, as a fraction of screen width
+const EDGE_SOFTNESS = 0.3;  // how gradually the dots fade in from the left
 
 /* ========================================================= */
 
@@ -53,6 +54,9 @@ const EDGE_SOFTNESS = 0.4;  // how gradually the dots fade in from the left
           + 0.45 * Math.sin(across * k * 0.53 - along * k * 0.2 + t * 0.7)
           + 0.25 * Math.sin(x * k * 0.8 + y * k * 0.4 - t * 1.3);
     v = 0.45 + v * 0.55;
+
+    // lift the gaps between bands without changing the biggest dots
+    v = MIN_DOT_SIZE + (1 - MIN_DOT_SIZE) * Math.min(1, Math.max(0, v));
 
     // fade out toward the left, with a wavy edge
     const edge = START_AT + 0.06 * Math.sin(y * 0.006 + t * 0.8)

@@ -6,7 +6,7 @@ const DOT_SPACING = 12;     // px between dot centres (smaller = denser)
 const MAX_DOT_SIZE = 0.9;   // biggest dot, as a fraction of spacing (1 = dots touch)
 const MIN_DOT_SIZE = 0.35;  // smallest dot between bands, as a fraction of the biggest (0 = gaps go blank, 1 = no bands)
 const GRID_ANGLE = 45;      // degrees the dot grid is rotated
-const BAND_ANGLE = 60;      // degrees the dark bands lean (0 = flat, 90 = upright)
+const BAND_ANGLE = 30;      // degrees the dark bands lean (0 = flat, 90 = upright)
 const BAND_WIDTH = 260;     // px from one dark band to the next
 const SPEED = 0.55;         // how fast it undulates (0 = frozen)
 const START_AT = 0.55;      // where the dots begin, as a fraction of screen width

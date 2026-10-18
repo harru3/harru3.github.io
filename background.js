@@ -3,14 +3,14 @@
    ========================================================= */
 const DOT_COLOR = '#bababa';
 const DOT_SPACING = 12;     // px between dot centres (smaller = denser)
-const DOT_SCALE = 0.5;      // shrinks dots AND spacing together (keeps the same look, just finer)
+const DOT_SCALE = 0.6;      // shrinks dots AND spacing together (keeps the same look, just finer)
 const MAX_DOT_SIZE = 0.9;   // biggest dot, as a fraction of spacing (1 = dots touch)
-const MIN_DOT_SIZE = 0.12;  // smallest dot between bands, as a fraction of the biggest (0 = gaps go blank, 1 = no bands)
+const MIN_DOT_SIZE = 0.2;  // smallest dot between bands, as a fraction of the biggest (0 = gaps go blank, 1 = no bands)
 const GRID_ANGLE = 45;      // degrees the dot grid is rotated
 const BAND_ANGLE = 30;      // degrees the dark bands lean (0 = flat, 90 = upright)
 const BAND_WIDTH = 260;     // px from one dark band to the next
 const SPEED = 0.55;         // how fast it undulates (0 = frozen)
-const TEXT_OVERLAP = 6;     // px the dots are allowed to creep under the text column
+const TEXT_OVERLAP = 12;     // px the dots are allowed to creep under the text column
 const EDGE_DOT = 0.2;       // dot size right at the text edge, as a fraction of full size
 const FADE_WIDTH = 0.7;     // how far the fade reaches, as a fraction of the gap between text and screen edge
 const EDGE_WOBBLE = 12;     // px the fading edge waves in and out (only ever away from the text)

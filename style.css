@@ -8,10 +8,10 @@
   --heading-color: #000000;   /* name + nav links */
   --text-color: #595959;      /* body text (grey) */
 
-  --name-size: 55px;
-  --tagline-size: 22px;
-  --text-size: 20px;
-  --nav-size: 21px;
+  --name-size: 51px;
+  --tagline-size: 18px;
+  --text-size: 16.5px;
+  --nav-size: 22px;
 
   --bar-color: #ffffff;       /* top bar background */
   --bar-text: #000000;        /* top bar text */
@@ -94,7 +94,7 @@ h2 {
 }
 
 .done h2 {
-  margin-top: 62px;   /* two blank lines above "Stuff I've done" */
+  margin-top: 51px;   /* two blank lines above "Stuff I've done" */
 }
 
 ul {
@@ -114,9 +114,9 @@ ul ul {
 /* Phones: smaller text, links spread evenly */
 @media (max-width: 700px) {
   :root {
-    --name-size: 42px;
-    --tagline-size: 18px;
-    --text-size: 17px;
+    --name-size: 39px;
+    --tagline-size: 16px;
+    --text-size: 15px;
     --nav-size: 17px;
   }
 
@@ -133,7 +133,7 @@ ul ul {
   }
 
   .done h2 {
-    margin-top: 32px;
+    margin-top: 26px;
   }
 }
 
